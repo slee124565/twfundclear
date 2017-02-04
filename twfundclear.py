@@ -194,27 +194,88 @@ def load_fundnav_html(save_path):
         fund_nav.append([dataset[t_count][0],float(dataset[t_count][1])])
         t_count += 1
 
-    return fund_nav
-    
+    return (fund_title,fund_nav)
     
 def test_fundnav(step=1):
-    fund_code = 'LU0997587166'
+    
+    fund_us_stock = 'LU0048573561'
+    fund_energy = 'AXAWFJEUSD'
+    
+    fund_code = fund_energy
     year = date.today().year
     save_path = '%s_%s.html' % (fund_code, year)
     if step == 1:
-        fetch_fundnav_html(fund_code, year, save_path)
+        retry_count = 0
+        while (retry_count <= 2):
+            try:
+                fetch_fundnav_html(fund_code, year, save_path)
+                break
+            except requests.exceptions.ConnectionError:
+                retry_count += 1
+                sys.stdout.write('retry count %d\n' % retry_count)
     else:
-        fundnav = load_fundnav_html(save_path)
+        _,fundnav = load_fundnav_html(save_path)
         count = 1
         for entry in fundnav:
             sys.stdout.write('%s\n' % str(entry))
             count += 1
             if count > 31:
                 break
-            
+
+def post_fundnav_html(fund_code, year, post_url):
+    '''fetch fundnav from fundclear website (and save as a local file)
+    and post the html content to post_url with post key post_arg_name
+    '''
+    tmp_html_filename = '%s_%s.html' % (fund_code,year)
+    retry_count = 0
+    while (retry_count <= 2):
+        try:
+            web_html = fetch_fundnav_html(fund_code, year, save_path=tmp_html_filename)
+            break
+        except requests.exceptions.ConnectionError:
+            retry_count += 1
+            sys.stdout.write('fetch retry %d\n' % retry_count)
+    
+    sys.stdout.write('post\n')
+    fund_title, csv_content = load_fundnav_html(tmp_html_filename)
+    sys.stdout.write('%s\n' % fund_title)    
+    data = { 'fund_title': fund_title,
+            'csv_content': csv_content}
+    r = requests.post(post_url,data = data)
+    with open('pose_raw_response.html', 'wb') as fd:
+        for chunk in r.iter_content(chunk_size=128):
+            fd.write(chunk)    
+    return r.text
+    
+def test_post_fundnav_html(fund_id=None, fetch_year=None):
+    
+    post_url = 'https://trusty-catbird-645.appspot.com/fc2/view/json/{p_fund_id}/{p_year}/'
+    fund_us_stock = 'LU0048573561'
+    fund_energy = 'AXAWFJEUSD'
+    fund_japan = 'LU0997587166'
+    
+    if fund_id is None:
+        fund_code = fund_japan
+    else:
+        fund_code = fund_id
+    if fetch_year is None:
+        year = date.today().year
+    else:
+        year = fetch_year
+        
+    post_url = post_url.format(p_fund_id = fund_code,
+                               p_year = year)
+    sys.stdout.write('%s\n' % post_url)
+    response_text = post_fundnav_html(fund_code, year, post_url)
+    sys.stdout.write(response_text)
+                
 if __name__ == '__main__':
-    test_fundnav(1)
-    test_fundnav(2)
+    #test_fundnav(1)
+    #test_fundnav(2)
+    if sys.argv[1] is None or sys.argv[2] is None:
+        test_post_fundnav_html()
+    else:
+        test_post_fundnav_html(sys.argv[1],sys.argv[2])
     
     
     
