@@ -32,12 +32,16 @@ class FundNavTestCase(TestCase):
         self.fund_code = self.fundcode.items()[-int(random.random() * len(self.fundcode))][1]['code']
          
     def test_download_fundnav_html(self):
-        html_content = fundnav.download_fundnav_html(self.fund_code, self.year)
-        fund_title, fund_year_nav = fundnav.load_fundnav(self.fund_code, self.year)
+        fundnav.download_fundnav_html(self.fund_code, self.year)
+        fund_title, fund_year_nav = fundnav.load_from_html(self.fund_code, self.year)
         
         self.assertNotEqual(len(fund_title), 0, 
                             'The Fund Should have title.')
         self.assertNotEqual(len(fund_year_nav), 0, 
                             'The Fund NAV Should have multiple entries')
         
-        
+    def test_file_storage_initialize(self):
+        fundnav.file_storage_initialize(self.fund_code)
+        self.assertTrue(fundnav.get_fundnav_json_path(self.fund_code,datetime.now().year), 
+                        'The Fund NAV JSON file for this year Should exist.')
+            

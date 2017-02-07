@@ -5,7 +5,7 @@ from lxml.html import document_fromstring
 
 from datetime import date
 import logging
-import sys
+import json
 import codecs
 import os
 from retrying import retry
@@ -25,6 +25,13 @@ def get_fundnav_filepath(fund_code,year):
     filename = '%s_%s.html' % (fund_code,year)
     fund_nav_html_file = os.path.join(fund_nav_html_dirname,filename)
     return fund_nav_html_file
+
+def get_fundnav_json_path(fund_code,year):
+    '''Return the default Fund NAV JSON dumps file path'''
+    
+    html_path = get_fundnav_filepath(fund_code, year)
+    json_path = os.path.join(os.path.dirname(html_path),'%s_%s.json' % (fund_code,year))
+    return json_path
 
 @retry(stop_max_attempt_number=3,wait_fixed=1000)
 def download_fundnav_html(fund_code, year):
@@ -54,7 +61,7 @@ def download_fundnav_html(fund_code, year):
     
     return html_content
     
-def load_fundnav(fund_code,year):
+def load_from_html(fund_code,year):
     '''load and parse Fund NAV from downloaded HTML file 
     and return a Dict object:
         [
@@ -103,3 +110,18 @@ def load_fundnav(fund_code,year):
         t_count += 1
 
     return (fund_title,fund_nav)
+
+def file_storage_initialize(fund_code, max_year_count=5):
+    '''download and parse Fund history NAV and save as JSON file'''
+    t_year = date.today().year
+    for _ in range(max_year_count):
+        download_fundnav_html(fund_code,t_year)
+        _, fund_nav = load_from_html(fund_code, t_year)
+        logger.info('fund code %s year %s with nav count %s' % (fund_code,t_year,len(fund_nav)))
+        if len(fund_nav) == 0:
+            break
+        else:
+            json_path = get_fundnav_json_path(fund_code, t_year)
+            with open(json_path,'w') as fh:
+                fh.write(json.dumps(fund_nav,indent=2))
+        t_year = t_year - 1
