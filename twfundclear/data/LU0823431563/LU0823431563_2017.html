@@ -1,0 +1,276 @@
+<!--
+/*
+程式名稱：D02_01-公告-歷史淨值查詢
+
+程式日期：2007-11-01
+
+程式作者：中菲
+
+程式說明：查詢歷史淨值
+
+表單編號：
+
+首次簽入之Stream：OPFA_INT
+
+=====================================================================
+
+修改記錄：OPFA_DEV1\1 (u950142) 2009-06-23 ： R090624_聯博投顧旗下四檔印度基金備註修改(程式)
+
+=====================================================================
+*/
+-->
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+	<HEAD>
+		<META http-equiv="Content-Type" content="text/html; charset=BIG5">
+		<META name="GENERATOR" content="IBM WebSphere Studio">
+		<TITLE>友善列印 - 歷史淨值</TITLE>
+	</HEAD>
+	<link href="/CSS/TSCDStyle.css" rel="stylesheet" type="text/css">
+	<link href="/CSS/style_ts.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		.WeekDay {color: black}
+		.Sat {color: green}
+		.Sun {color: red}
+	</style>
+	<script>
+	var sec = 3;
+	var i = 0;
+	function body_onload() {
+	  i++;
+	  if( i == sec ) {
+	     window.print();
+	  }  else {
+	    setTimeout("body_onload()",1000);
+	  }
+	}
+
+	function testPrint() {
+		window.print();
+	}
+	</script>
+	<BODY topmargin="0" leftmargin="0" onLoad="body_onload()">
+		<table width="580" height="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+			<tr>
+				<td align="center" valign="top">
+				<!-- Page Content -->
+		            <table width="580" border="0" cellpadding="0" cellspacing="0">
+		            	<tr>
+		            		<td><br/>
+							<!-- Query Form -->
+									<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<!--<input type="button" name="btnPrint" value="列印" onClick="testPrint()">-->
+
+										<tr class="FieldTitle">
+											<td>
+												&nbsp;&nbsp;總代理&nbsp;:&nbsp;法銀巴黎證券投資顧問股份有限公司
+											</td>
+										</tr>
+
+										<tr class="FieldTitle">
+											<td>
+												&nbsp;&nbsp;境外基金機構&nbsp;:&nbsp;法國巴黎投資盧森堡公司/BNP PARIBAS INVESTMENT PARTNERS LUXEMBOURG
+											</td>
+										</tr>
+										<tr>
+											<td>
+												&nbsp;&nbsp;基金名稱&nbsp;:&nbsp;法巴百利達俄羅斯股票基金 C (美元)
+											</td>
+										</tr>
+										<tr class="FieldTitle">
+											<td>
+												&nbsp;&nbsp;淨值日期&nbsp;:&nbsp;2017/01/01&nbsp;~&nbsp;2017/02/08
+											</td>
+										</tr>								
+									</table>
+									<br>
+							<!-- Query Form -->
+		            		</td>
+		            	</tr>
+		            	<tr>
+		            		<td align="left" valign="top">
+							<!-- Main Content -->
+							
+									
+									
+									<table width="100%" border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td align="center" valign="top">
+													<applet code="tw.com.ddsc.tscd.applet.NetValue.class" archive="DynamicChart.jar" WIDTH="800" HEIGHT="300">
+														<param name="decimalPoint" value="2">
+
+														
+														<!-- <param name="horizontalSegment" value="5"> -->
+														<param name="horizontalSegment" value=5>
+														<param name="site" value="/DynamicChartAchieve/DataObtainUtil">
+														<param name="strFundId" value="LU0823431563">
+														<param name="strBeginDate" value="2017/01/01">
+														<param name="strEndDate" value="2017/02/08">
+														<param name="htNav" value="{2017/01/03=91.640000, 2017/01/04=91.470000, 2017/01/05=91.450000, 2017/01/06=91.270000, 2017/01/09=90.490000, 2017/01/10=91.070000, 2017/01/11=90.000000, 2017/01/12=91.480000, 2017/01/13=89.910000, 2017/01/16=89.540000, 2017/01/17=89.790000, 2017/01/18=89.540000, 2017/01/19=88.650000, 2017/01/20=88.600000, 2017/01/23=88.770000, 2017/01/24=89.800000, 2017/01/25=90.140000, 2017/01/26=90.530000, 2017/01/27=92.390000, 2017/01/30=91.230000, 2017/01/31=90.600000, 2017/02/01=90.860000, 2017/02/02=90.970000, 2017/02/03=92.240000, 2017/02/06=91.720000}">
+														<param name="htNavToday" value="{2017/02/06=91.720000}">
+													</applet>
+											</td>
+										</tr>
+									</table>
+									
+									
+									<table width="100%" border="1" cellpadding="1" cellspacing="1">
+										<tr class="ListHeadPrint">
+											<td colspan="7">■法國巴黎投資盧森堡公司/BNP PARIBAS INVESTMENT PARTNERS LUXEMBOURG&nbsp;法巴百利達俄羅斯股票基金 C (美元)
+											<br/>
+											
+											</td> 
+										</tr>
+										<tr>
+											<td align="center">
+										
+											<table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2017/01/01</td>
+<td width="12%" align="center" class="WeekDay">2017/01/02</td>
+<td width="12%" align="center" class="WeekDay">2017/01/03</td>
+<td width="12%" align="center" class="WeekDay">2017/01/04</td>
+<td width="12%" align="center" class="WeekDay">2017/01/05</td>
+<td width="12%" align="center" class="WeekDay">2017/01/06</td>
+<td width="12%" align="center" class="Sat">2017/01/07</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">91.640000</td>
+<td width="12%" align="center">91.470000</td>
+<td width="12%" align="center">91.450000</td>
+<td width="12%" align="center">91.270000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2017/01/08</td>
+<td width="12%" align="center" class="WeekDay">2017/01/09</td>
+<td width="12%" align="center" class="WeekDay">2017/01/10</td>
+<td width="12%" align="center" class="WeekDay">2017/01/11</td>
+<td width="12%" align="center" class="WeekDay">2017/01/12</td>
+<td width="12%" align="center" class="WeekDay">2017/01/13</td>
+<td width="12%" align="center" class="Sat">2017/01/14</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">90.490000</td>
+<td width="12%" align="center">91.070000</td>
+<td width="12%" align="center">90.000000</td>
+<td width="12%" align="center">91.480000</td>
+<td width="12%" align="center">89.910000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2017/01/15</td>
+<td width="12%" align="center" class="WeekDay">2017/01/16</td>
+<td width="12%" align="center" class="WeekDay">2017/01/17</td>
+<td width="12%" align="center" class="WeekDay">2017/01/18</td>
+<td width="12%" align="center" class="WeekDay">2017/01/19</td>
+<td width="12%" align="center" class="WeekDay">2017/01/20</td>
+<td width="12%" align="center" class="Sat">2017/01/21</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">89.540000</td>
+<td width="12%" align="center">89.790000</td>
+<td width="12%" align="center">89.540000</td>
+<td width="12%" align="center">88.650000</td>
+<td width="12%" align="center">88.600000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2017/01/22</td>
+<td width="12%" align="center" class="WeekDay">2017/01/23</td>
+<td width="12%" align="center" class="WeekDay">2017/01/24</td>
+<td width="12%" align="center" class="WeekDay">2017/01/25</td>
+<td width="12%" align="center" class="WeekDay">2017/01/26</td>
+<td width="12%" align="center" class="WeekDay">2017/01/27</td>
+<td width="12%" align="center" class="Sat">2017/01/28</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">88.770000</td>
+<td width="12%" align="center">89.800000</td>
+<td width="12%" align="center">90.140000</td>
+<td width="12%" align="center">90.530000</td>
+<td width="12%" align="center">92.390000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2017/01/29</td>
+<td width="12%" align="center" class="WeekDay">2017/01/30</td>
+<td width="12%" align="center" class="WeekDay">2017/01/31</td>
+<td width="12%" align="center" class="WeekDay">2017/02/01</td>
+<td width="12%" align="center" class="WeekDay">2017/02/02</td>
+<td width="12%" align="center" class="WeekDay">2017/02/03</td>
+<td width="12%" align="center" class="Sat">2017/02/04</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">91.230000</td>
+<td width="12%" align="center">90.600000</td>
+<td width="12%" align="center">90.860000</td>
+<td width="12%" align="center">90.970000</td>
+<td width="12%" align="center">92.240000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2017/02/05</td>
+<td width="12%" align="center" class="WeekDay">2017/02/06</td>
+<td width="12%" align="center" class="WeekDay">2017/02/07</td>
+<td width="12%" align="center" class="WeekDay">2017/02/08</td>
+<td width="12%" align="center">&nbsp;</td>
+<td width="12%" align="center">&nbsp;</td>
+<td width="12%" align="center">&nbsp;</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">91.720000</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">&nbsp;</td>
+<td width="12%" align="center">&nbsp;</td>
+<td width="12%" align="center">&nbsp;</td>
+</tr>
+</table
+											
+											</td>
+										</tr>
+									</table>
+							
+							
+							<!-- Main Content -->		
+		            		</td>
+		            	</tr>	
+		            </table>
+				<!-- Page Content -->
+				</td>
+			</tr>
+			<tr>
+				<td align="center" valign="bottom">
+					
+<META http-equiv=Content-Type content="text/html; charset=BIG5">
+      <TABLE cellSpacing=0 cellPadding=5 width="95%" border=0>
+        <TR> 
+          <TD> <DIV align=center>
+          	<span class="copyright">本網站各項資料均由境外基金總代理輸入確認後，由本系統對外公佈<br>資料若有虛偽不實或錯誤，概由該公司負責<br>
+使用者可自行下載參考，惟於法令範圍內須合理使用，不得侵害他人權益。
+            <br>本網頁最佳瀏覽建議解析度1024 × 768<br>
+            </DIV></TD>
+        </TR>
+      </TABLE>
+				</td>
+			</tr>
+		</table>
+	</BODY>
+</HTML>
+

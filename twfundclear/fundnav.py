@@ -125,3 +125,15 @@ def file_storage_initialize(fund_code, max_year_count=5):
             with open(json_path,'w') as fh:
                 fh.write(json.dumps(fund_nav,indent=2))
         t_year = t_year - 1
+
+def file_storage_update(fund_code, year=date.today().year):
+    '''download and parse Fund annual NAV and save as JSON file'''
+    t_year = str(year)
+    download_fundnav_html(fund_code,t_year)
+    _, fund_nav = load_from_html(fund_code, t_year)
+    logger.info('fund code %s year %s with nav count %s' % (fund_code,t_year,len(fund_nav)))
+    if len(fund_nav) > 0:
+        json_path = get_fundnav_json_path(fund_code, t_year)
+        with open(json_path,'w') as fh:
+            fh.write(json.dumps(fund_nav,indent=2))
+    

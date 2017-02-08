@@ -1,0 +1,1122 @@
+<!--
+/*
+程式名稱：D02_01-公告-歷史淨值查詢
+
+程式日期：2007-11-01
+
+程式作者：中菲
+
+程式說明：查詢歷史淨值
+
+表單編號：
+
+首次簽入之Stream：OPFA_INT
+
+=====================================================================
+
+修改記錄：OPFA_DEV1\1 (u950142) 2009-06-23 ： R090624_聯博投顧旗下四檔印度基金備註修改(程式)
+
+=====================================================================
+*/
+-->
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+	<HEAD>
+		<META http-equiv="Content-Type" content="text/html; charset=BIG5">
+		<META name="GENERATOR" content="IBM WebSphere Studio">
+		<TITLE>友善列印 - 歷史淨值</TITLE>
+	</HEAD>
+	<link href="/CSS/TSCDStyle.css" rel="stylesheet" type="text/css">
+	<link href="/CSS/style_ts.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		.WeekDay {color: black}
+		.Sat {color: green}
+		.Sun {color: red}
+	</style>
+	<script>
+	var sec = 3;
+	var i = 0;
+	function body_onload() {
+	  i++;
+	  if( i == sec ) {
+	     window.print();
+	  }  else {
+	    setTimeout("body_onload()",1000);
+	  }
+	}
+
+	function testPrint() {
+		window.print();
+	}
+	</script>
+	<BODY topmargin="0" leftmargin="0" onLoad="body_onload()">
+		<table width="580" height="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+			<tr>
+				<td align="center" valign="top">
+				<!-- Page Content -->
+		            <table width="580" border="0" cellpadding="0" cellspacing="0">
+		            	<tr>
+		            		<td><br/>
+							<!-- Query Form -->
+									<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<!--<input type="button" name="btnPrint" value="列印" onClick="testPrint()">-->
+
+										<tr class="FieldTitle">
+											<td>
+												&nbsp;&nbsp;總代理&nbsp;:&nbsp;法銀巴黎證券投資顧問股份有限公司
+											</td>
+										</tr>
+
+										<tr class="FieldTitle">
+											<td>
+												&nbsp;&nbsp;境外基金機構&nbsp;:&nbsp;法國巴黎投資盧森堡公司/BNP PARIBAS INVESTMENT PARTNERS LUXEMBOURG
+											</td>
+										</tr>
+										<tr>
+											<td>
+												&nbsp;&nbsp;基金名稱&nbsp;:&nbsp;法巴百利達俄羅斯股票基金 C (美元)
+											</td>
+										</tr>
+										<tr class="FieldTitle">
+											<td>
+												&nbsp;&nbsp;淨值日期&nbsp;:&nbsp;2016/01/01&nbsp;~&nbsp;2016/12/31
+											</td>
+										</tr>								
+									</table>
+									<br>
+							<!-- Query Form -->
+		            		</td>
+		            	</tr>
+		            	<tr>
+		            		<td align="left" valign="top">
+							<!-- Main Content -->
+							
+									
+									
+									<table width="100%" border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td align="center" valign="top">
+													<applet code="tw.com.ddsc.tscd.applet.NetValue.class" archive="DynamicChart.jar" WIDTH="800" HEIGHT="300">
+														<param name="decimalPoint" value="2">
+
+														
+														<!-- <param name="horizontalSegment" value="5"> -->
+														<param name="horizontalSegment" value=5>
+														<param name="site" value="/DynamicChartAchieve/DataObtainUtil">
+														<param name="strFundId" value="LU0823431563">
+														<param name="strBeginDate" value="2016/01/01">
+														<param name="strEndDate" value="2016/12/31">
+														<param name="htNav" value="{2016/01/04=57.360000, 2016/01/05=57.780000, 2016/01/06=56.870000, 2016/01/11=54.350000, 2016/01/12=54.020000, 2016/01/13=53.940000, 2016/01/14=53.570000, 2016/01/15=50.920000, 2016/01/18=50.600000, 2016/01/19=51.660000, 2016/01/20=49.390000, 2016/01/21=48.970000, 2016/01/22=53.200000, 2016/01/25=52.480000, 2016/01/26=52.660000, 2016/01/27=54.210000, 2016/01/28=55.320000, 2016/01/29=57.060000, 2016/02/01=56.010000, 2016/02/02=54.220000, 2016/02/03=54.150000, 2016/02/04=56.110000, 2016/02/05=55.410000, 2016/02/08=53.660000, 2016/02/09=52.790000, 2016/02/10=52.890000, 2016/02/11=51.410000, 2016/02/12=52.700000, 2016/02/15=53.860000, 2016/02/16=54.030000, 2016/02/17=55.900000, 2016/02/18=56.320000, 2016/02/19=54.810000, 2016/02/22=56.810000, 2016/02/24=55.520000, 2016/02/25=56.110000, 2016/02/26=56.980000, 2016/02/29=58.090000, 2016/03/01=58.980000, 2016/03/02=58.960000, 2016/03/03=59.800000, 2016/03/04=61.010000, 2016/03/07=62.020000, 2016/03/09=61.980000, 2016/03/10=61.930000, 2016/03/11=62.780000, 2016/03/14=62.240000, 2016/03/15=61.630000, 2016/03/16=62.580000, 2016/03/17=64.730000, 2016/03/18=65.560000, 2016/03/21=65.520000, 2016/03/22=65.900000, 2016/03/23=64.690000, 2016/03/24=63.840000, 2016/03/29=63.210000, 2016/03/30=65.050000, 2016/03/31=65.550000, 2016/04/01=64.300000, 2016/04/04=64.170000, 2016/04/05=62.940000, 2016/04/06=63.640000, 2016/04/07=63.750000, 2016/04/08=65.090000, 2016/04/11=66.340000, 2016/04/12=66.680000, 2016/04/13=68.100000, 2016/04/14=67.410000, 2016/04/15=66.720000, 2016/04/18=66.480000, 2016/04/19=68.420000, 2016/04/20=68.870000, 2016/04/21=68.790000, 2016/04/22=69.330000, 2016/04/25=68.510000, 2016/04/26=68.240000, 2016/04/27=67.970000, 2016/04/28=69.670000, 2016/04/29=69.080000, 2016/05/04=67.040000, 2016/05/06=66.900000, 2016/05/10=66.220000, 2016/05/11=67.480000, 2016/05/12=67.550000, 2016/05/13=67.730000, 2016/05/17=68.620000, 2016/05/18=68.690000, 2016/05/19=66.490000, 2016/05/20=66.630000, 2016/05/23=65.930000, 2016/05/24=66.570000, 2016/05/25=67.750000, 2016/05/26=67.860000, 2016/05/27=67.680000, 2016/05/31=67.400000, 2016/06/01=66.480000, 2016/06/02=65.990000, 2016/06/03=67.330000, 2016/06/06=68.810000, 2016/06/07=69.980000, 2016/06/08=70.990000, 2016/06/09=69.960000, 2016/06/10=68.800000, 2016/06/14=67.100000, 2016/06/15=67.690000, 2016/06/16=66.690000, 2016/06/17=67.850000, 2016/06/20=69.520000, 2016/06/21=69.100000, 2016/06/22=68.850000, 2016/06/24=67.420000, 2016/06/27=65.790000, 2016/06/28=66.920000, 2016/06/29=68.630000, 2016/06/30=68.700000, 2016/07/01=68.660000, 2016/07/04=69.450000, 2016/07/05=68.540000, 2016/07/06=68.210000, 2016/07/07=68.790000, 2016/07/08=69.290000, 2016/07/11=70.140000, 2016/07/12=70.980000, 2016/07/13=71.360000, 2016/07/14=72.480000, 2016/07/15=72.250000, 2016/07/18=72.340000, 2016/07/19=71.990000, 2016/07/20=72.200000, 2016/07/21=72.100000, 2016/07/22=71.240000, 2016/07/25=71.240000, 2016/07/26=70.750000, 2016/07/27=70.550000, 2016/07/28=70.660000, 2016/07/29=71.000000, 2016/08/01=70.930000, 2016/08/02=69.970000, 2016/08/03=69.880000, 2016/08/04=70.940000, 2016/08/05=71.950000, 2016/08/08=73.080000, 2016/08/09=73.150000, 2016/08/10=72.850000, 2016/08/11=73.150000, 2016/08/12=73.370000, 2016/08/16=74.280000, 2016/08/17=74.020000, 2016/08/18=74.300000, 2016/08/19=73.970000, 2016/08/22=73.880000, 2016/08/23=74.270000, 2016/08/24=73.310000, 2016/08/25=73.720000, 2016/08/26=74.370000, 2016/08/30=73.370000, 2016/08/31=72.750000, 2016/09/01=72.490000, 2016/09/02=73.940000, 2016/09/05=74.620000, 2016/09/06=75.550000, 2016/09/07=76.190000, 2016/09/08=76.990000, 2016/09/09=75.430000, 2016/09/12=74.970000, 2016/09/13=74.230000, 2016/09/14=73.960000, 2016/09/15=73.950000, 2016/09/16=73.450000, 2016/09/19=74.030000, 2016/09/20=74.130000, 2016/09/21=74.940000, 2016/09/22=76.600000, 2016/09/23=76.210000, 2016/09/26=75.990000, 2016/09/27=75.020000, 2016/09/28=75.400000, 2016/09/29=76.410000, 2016/09/30=75.950000, 2016/10/03=76.880000, 2016/10/04=76.760000, 2016/10/05=76.800000, 2016/10/06=77.520000, 2016/10/07=77.730000, 2016/10/10=78.300000, 2016/10/11=77.530000, 2016/10/12=76.940000, 2016/10/13=76.150000, 2016/10/14=76.410000, 2016/10/17=76.110000, 2016/10/18=76.650000, 2016/10/19=77.300000, 2016/10/20=76.600000, 2016/10/21=76.480000, 2016/10/24=76.800000, 2016/10/25=77.270000, 2016/10/26=76.620000, 2016/10/27=76.990000, 2016/10/28=76.850000, 2016/10/31=77.110000, 2016/11/02=75.510000, 2016/11/03=75.270000, 2016/11/07=74.460000, 2016/11/08=74.860000, 2016/11/09=75.680000, 2016/11/10=75.760000, 2016/11/11=74.580000, 2016/11/14=74.310000, 2016/11/15=75.700000, 2016/11/16=76.220000, 2016/11/17=76.840000, 2016/11/18=76.570000, 2016/11/21=77.930000, 2016/11/22=78.430000, 2016/11/23=78.540000, 2016/11/24=79.140000, 2016/11/25=78.430000, 2016/11/28=78.330000, 2016/11/29=77.370000, 2016/11/30=79.200000, 2016/12/01=80.510000, 2016/12/02=80.690000, 2016/12/05=82.140000, 2016/12/06=81.960000, 2016/12/07=82.450000, 2016/12/08=84.430000, 2016/12/09=84.700000, 2016/12/12=87.390000, 2016/12/13=89.200000, 2016/12/14=88.050000, 2016/12/15=87.130000, 2016/12/16=86.730000, 2016/12/19=86.670000, 2016/12/20=87.370000, 2016/12/21=87.310000, 2016/12/22=86.440000, 2016/12/23=86.240000, 2016/12/28=87.820000, 2016/12/29=88.480000, 2016/12/30=89.040000}">
+														<param name="htNavToday" value="{2017/02/06=91.720000}">
+													</applet>
+											</td>
+										</tr>
+									</table>
+									
+									
+									<table width="100%" border="1" cellpadding="1" cellspacing="1">
+										<tr class="ListHeadPrint">
+											<td colspan="7">■法國巴黎投資盧森堡公司/BNP PARIBAS INVESTMENT PARTNERS LUXEMBOURG&nbsp;法巴百利達俄羅斯股票基金 C (美元)
+											<br/>
+											
+											</td> 
+										</tr>
+										<tr>
+											<td align="center">
+										
+											<table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2015/12/27</td>
+<td width="12%" align="center" class="WeekDay">2015/12/28</td>
+<td width="12%" align="center" class="WeekDay">2015/12/29</td>
+<td width="12%" align="center" class="WeekDay">2015/12/30</td>
+<td width="12%" align="center" class="WeekDay">2015/12/31</td>
+<td width="12%" align="center" class="WeekDay">2016/01/01</td>
+<td width="12%" align="center" class="Sat">2016/01/02</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/01/03</td>
+<td width="12%" align="center" class="WeekDay">2016/01/04</td>
+<td width="12%" align="center" class="WeekDay">2016/01/05</td>
+<td width="12%" align="center" class="WeekDay">2016/01/06</td>
+<td width="12%" align="center" class="WeekDay">2016/01/07</td>
+<td width="12%" align="center" class="WeekDay">2016/01/08</td>
+<td width="12%" align="center" class="Sat">2016/01/09</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">57.360000</td>
+<td width="12%" align="center">57.780000</td>
+<td width="12%" align="center">56.870000</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/01/10</td>
+<td width="12%" align="center" class="WeekDay">2016/01/11</td>
+<td width="12%" align="center" class="WeekDay">2016/01/12</td>
+<td width="12%" align="center" class="WeekDay">2016/01/13</td>
+<td width="12%" align="center" class="WeekDay">2016/01/14</td>
+<td width="12%" align="center" class="WeekDay">2016/01/15</td>
+<td width="12%" align="center" class="Sat">2016/01/16</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">54.350000</td>
+<td width="12%" align="center">54.020000</td>
+<td width="12%" align="center">53.940000</td>
+<td width="12%" align="center">53.570000</td>
+<td width="12%" align="center">50.920000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/01/17</td>
+<td width="12%" align="center" class="WeekDay">2016/01/18</td>
+<td width="12%" align="center" class="WeekDay">2016/01/19</td>
+<td width="12%" align="center" class="WeekDay">2016/01/20</td>
+<td width="12%" align="center" class="WeekDay">2016/01/21</td>
+<td width="12%" align="center" class="WeekDay">2016/01/22</td>
+<td width="12%" align="center" class="Sat">2016/01/23</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">50.600000</td>
+<td width="12%" align="center">51.660000</td>
+<td width="12%" align="center">49.390000</td>
+<td width="12%" align="center">48.970000</td>
+<td width="12%" align="center">53.200000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/01/24</td>
+<td width="12%" align="center" class="WeekDay">2016/01/25</td>
+<td width="12%" align="center" class="WeekDay">2016/01/26</td>
+<td width="12%" align="center" class="WeekDay">2016/01/27</td>
+<td width="12%" align="center" class="WeekDay">2016/01/28</td>
+<td width="12%" align="center" class="WeekDay">2016/01/29</td>
+<td width="12%" align="center" class="Sat">2016/01/30</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">52.480000</td>
+<td width="12%" align="center">52.660000</td>
+<td width="12%" align="center">54.210000</td>
+<td width="12%" align="center">55.320000</td>
+<td width="12%" align="center">57.060000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/01/31</td>
+<td width="12%" align="center" class="WeekDay">2016/02/01</td>
+<td width="12%" align="center" class="WeekDay">2016/02/02</td>
+<td width="12%" align="center" class="WeekDay">2016/02/03</td>
+<td width="12%" align="center" class="WeekDay">2016/02/04</td>
+<td width="12%" align="center" class="WeekDay">2016/02/05</td>
+<td width="12%" align="center" class="Sat">2016/02/06</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">56.010000</td>
+<td width="12%" align="center">54.220000</td>
+<td width="12%" align="center">54.150000</td>
+<td width="12%" align="center">56.110000</td>
+<td width="12%" align="center">55.410000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/02/07</td>
+<td width="12%" align="center" class="WeekDay">2016/02/08</td>
+<td width="12%" align="center" class="WeekDay">2016/02/09</td>
+<td width="12%" align="center" class="WeekDay">2016/02/10</td>
+<td width="12%" align="center" class="WeekDay">2016/02/11</td>
+<td width="12%" align="center" class="WeekDay">2016/02/12</td>
+<td width="12%" align="center" class="Sat">2016/02/13</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">53.660000</td>
+<td width="12%" align="center">52.790000</td>
+<td width="12%" align="center">52.890000</td>
+<td width="12%" align="center">51.410000</td>
+<td width="12%" align="center">52.700000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/02/14</td>
+<td width="12%" align="center" class="WeekDay">2016/02/15</td>
+<td width="12%" align="center" class="WeekDay">2016/02/16</td>
+<td width="12%" align="center" class="WeekDay">2016/02/17</td>
+<td width="12%" align="center" class="WeekDay">2016/02/18</td>
+<td width="12%" align="center" class="WeekDay">2016/02/19</td>
+<td width="12%" align="center" class="Sat">2016/02/20</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">53.860000</td>
+<td width="12%" align="center">54.030000</td>
+<td width="12%" align="center">55.900000</td>
+<td width="12%" align="center">56.320000</td>
+<td width="12%" align="center">54.810000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/02/21</td>
+<td width="12%" align="center" class="WeekDay">2016/02/22</td>
+<td width="12%" align="center" class="WeekDay">2016/02/23</td>
+<td width="12%" align="center" class="WeekDay">2016/02/24</td>
+<td width="12%" align="center" class="WeekDay">2016/02/25</td>
+<td width="12%" align="center" class="WeekDay">2016/02/26</td>
+<td width="12%" align="center" class="Sat">2016/02/27</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">56.810000</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">55.520000</td>
+<td width="12%" align="center">56.110000</td>
+<td width="12%" align="center">56.980000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/02/28</td>
+<td width="12%" align="center" class="WeekDay">2016/02/29</td>
+<td width="12%" align="center" class="WeekDay">2016/03/01</td>
+<td width="12%" align="center" class="WeekDay">2016/03/02</td>
+<td width="12%" align="center" class="WeekDay">2016/03/03</td>
+<td width="12%" align="center" class="WeekDay">2016/03/04</td>
+<td width="12%" align="center" class="Sat">2016/03/05</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">58.090000</td>
+<td width="12%" align="center">58.980000</td>
+<td width="12%" align="center">58.960000</td>
+<td width="12%" align="center">59.800000</td>
+<td width="12%" align="center">61.010000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/03/06</td>
+<td width="12%" align="center" class="WeekDay">2016/03/07</td>
+<td width="12%" align="center" class="WeekDay">2016/03/08</td>
+<td width="12%" align="center" class="WeekDay">2016/03/09</td>
+<td width="12%" align="center" class="WeekDay">2016/03/10</td>
+<td width="12%" align="center" class="WeekDay">2016/03/11</td>
+<td width="12%" align="center" class="Sat">2016/03/12</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">62.020000</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">61.980000</td>
+<td width="12%" align="center">61.930000</td>
+<td width="12%" align="center">62.780000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/03/13</td>
+<td width="12%" align="center" class="WeekDay">2016/03/14</td>
+<td width="12%" align="center" class="WeekDay">2016/03/15</td>
+<td width="12%" align="center" class="WeekDay">2016/03/16</td>
+<td width="12%" align="center" class="WeekDay">2016/03/17</td>
+<td width="12%" align="center" class="WeekDay">2016/03/18</td>
+<td width="12%" align="center" class="Sat">2016/03/19</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">62.240000</td>
+<td width="12%" align="center">61.630000</td>
+<td width="12%" align="center">62.580000</td>
+<td width="12%" align="center">64.730000</td>
+<td width="12%" align="center">65.560000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/03/20</td>
+<td width="12%" align="center" class="WeekDay">2016/03/21</td>
+<td width="12%" align="center" class="WeekDay">2016/03/22</td>
+<td width="12%" align="center" class="WeekDay">2016/03/23</td>
+<td width="12%" align="center" class="WeekDay">2016/03/24</td>
+<td width="12%" align="center" class="WeekDay">2016/03/25</td>
+<td width="12%" align="center" class="Sat">2016/03/26</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">65.520000</td>
+<td width="12%" align="center">65.900000</td>
+<td width="12%" align="center">64.690000</td>
+<td width="12%" align="center">63.840000</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/03/27</td>
+<td width="12%" align="center" class="WeekDay">2016/03/28</td>
+<td width="12%" align="center" class="WeekDay">2016/03/29</td>
+<td width="12%" align="center" class="WeekDay">2016/03/30</td>
+<td width="12%" align="center" class="WeekDay">2016/03/31</td>
+<td width="12%" align="center" class="WeekDay">2016/04/01</td>
+<td width="12%" align="center" class="Sat">2016/04/02</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">63.210000</td>
+<td width="12%" align="center">65.050000</td>
+<td width="12%" align="center">65.550000</td>
+<td width="12%" align="center">64.300000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/04/03</td>
+<td width="12%" align="center" class="WeekDay">2016/04/04</td>
+<td width="12%" align="center" class="WeekDay">2016/04/05</td>
+<td width="12%" align="center" class="WeekDay">2016/04/06</td>
+<td width="12%" align="center" class="WeekDay">2016/04/07</td>
+<td width="12%" align="center" class="WeekDay">2016/04/08</td>
+<td width="12%" align="center" class="Sat">2016/04/09</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">64.170000</td>
+<td width="12%" align="center">62.940000</td>
+<td width="12%" align="center">63.640000</td>
+<td width="12%" align="center">63.750000</td>
+<td width="12%" align="center">65.090000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/04/10</td>
+<td width="12%" align="center" class="WeekDay">2016/04/11</td>
+<td width="12%" align="center" class="WeekDay">2016/04/12</td>
+<td width="12%" align="center" class="WeekDay">2016/04/13</td>
+<td width="12%" align="center" class="WeekDay">2016/04/14</td>
+<td width="12%" align="center" class="WeekDay">2016/04/15</td>
+<td width="12%" align="center" class="Sat">2016/04/16</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">66.340000</td>
+<td width="12%" align="center">66.680000</td>
+<td width="12%" align="center">68.100000</td>
+<td width="12%" align="center">67.410000</td>
+<td width="12%" align="center">66.720000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/04/17</td>
+<td width="12%" align="center" class="WeekDay">2016/04/18</td>
+<td width="12%" align="center" class="WeekDay">2016/04/19</td>
+<td width="12%" align="center" class="WeekDay">2016/04/20</td>
+<td width="12%" align="center" class="WeekDay">2016/04/21</td>
+<td width="12%" align="center" class="WeekDay">2016/04/22</td>
+<td width="12%" align="center" class="Sat">2016/04/23</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">66.480000</td>
+<td width="12%" align="center">68.420000</td>
+<td width="12%" align="center">68.870000</td>
+<td width="12%" align="center">68.790000</td>
+<td width="12%" align="center">69.330000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/04/24</td>
+<td width="12%" align="center" class="WeekDay">2016/04/25</td>
+<td width="12%" align="center" class="WeekDay">2016/04/26</td>
+<td width="12%" align="center" class="WeekDay">2016/04/27</td>
+<td width="12%" align="center" class="WeekDay">2016/04/28</td>
+<td width="12%" align="center" class="WeekDay">2016/04/29</td>
+<td width="12%" align="center" class="Sat">2016/04/30</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">68.510000</td>
+<td width="12%" align="center">68.240000</td>
+<td width="12%" align="center">67.970000</td>
+<td width="12%" align="center">69.670000</td>
+<td width="12%" align="center">69.080000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/05/01</td>
+<td width="12%" align="center" class="WeekDay">2016/05/02</td>
+<td width="12%" align="center" class="WeekDay">2016/05/03</td>
+<td width="12%" align="center" class="WeekDay">2016/05/04</td>
+<td width="12%" align="center" class="WeekDay">2016/05/05</td>
+<td width="12%" align="center" class="WeekDay">2016/05/06</td>
+<td width="12%" align="center" class="Sat">2016/05/07</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">67.040000</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">66.900000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/05/08</td>
+<td width="12%" align="center" class="WeekDay">2016/05/09</td>
+<td width="12%" align="center" class="WeekDay">2016/05/10</td>
+<td width="12%" align="center" class="WeekDay">2016/05/11</td>
+<td width="12%" align="center" class="WeekDay">2016/05/12</td>
+<td width="12%" align="center" class="WeekDay">2016/05/13</td>
+<td width="12%" align="center" class="Sat">2016/05/14</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">66.220000</td>
+<td width="12%" align="center">67.480000</td>
+<td width="12%" align="center">67.550000</td>
+<td width="12%" align="center">67.730000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/05/15</td>
+<td width="12%" align="center" class="WeekDay">2016/05/16</td>
+<td width="12%" align="center" class="WeekDay">2016/05/17</td>
+<td width="12%" align="center" class="WeekDay">2016/05/18</td>
+<td width="12%" align="center" class="WeekDay">2016/05/19</td>
+<td width="12%" align="center" class="WeekDay">2016/05/20</td>
+<td width="12%" align="center" class="Sat">2016/05/21</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">68.620000</td>
+<td width="12%" align="center">68.690000</td>
+<td width="12%" align="center">66.490000</td>
+<td width="12%" align="center">66.630000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/05/22</td>
+<td width="12%" align="center" class="WeekDay">2016/05/23</td>
+<td width="12%" align="center" class="WeekDay">2016/05/24</td>
+<td width="12%" align="center" class="WeekDay">2016/05/25</td>
+<td width="12%" align="center" class="WeekDay">2016/05/26</td>
+<td width="12%" align="center" class="WeekDay">2016/05/27</td>
+<td width="12%" align="center" class="Sat">2016/05/28</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">65.930000</td>
+<td width="12%" align="center">66.570000</td>
+<td width="12%" align="center">67.750000</td>
+<td width="12%" align="center">67.860000</td>
+<td width="12%" align="center">67.680000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/05/29</td>
+<td width="12%" align="center" class="WeekDay">2016/05/30</td>
+<td width="12%" align="center" class="WeekDay">2016/05/31</td>
+<td width="12%" align="center" class="WeekDay">2016/06/01</td>
+<td width="12%" align="center" class="WeekDay">2016/06/02</td>
+<td width="12%" align="center" class="WeekDay">2016/06/03</td>
+<td width="12%" align="center" class="Sat">2016/06/04</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">67.400000</td>
+<td width="12%" align="center">66.480000</td>
+<td width="12%" align="center">65.990000</td>
+<td width="12%" align="center">67.330000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/06/05</td>
+<td width="12%" align="center" class="WeekDay">2016/06/06</td>
+<td width="12%" align="center" class="WeekDay">2016/06/07</td>
+<td width="12%" align="center" class="WeekDay">2016/06/08</td>
+<td width="12%" align="center" class="WeekDay">2016/06/09</td>
+<td width="12%" align="center" class="WeekDay">2016/06/10</td>
+<td width="12%" align="center" class="Sat">2016/06/11</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">68.810000</td>
+<td width="12%" align="center">69.980000</td>
+<td width="12%" align="center">70.990000</td>
+<td width="12%" align="center">69.960000</td>
+<td width="12%" align="center">68.800000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/06/12</td>
+<td width="12%" align="center" class="WeekDay">2016/06/13</td>
+<td width="12%" align="center" class="WeekDay">2016/06/14</td>
+<td width="12%" align="center" class="WeekDay">2016/06/15</td>
+<td width="12%" align="center" class="WeekDay">2016/06/16</td>
+<td width="12%" align="center" class="WeekDay">2016/06/17</td>
+<td width="12%" align="center" class="Sat">2016/06/18</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">67.100000</td>
+<td width="12%" align="center">67.690000</td>
+<td width="12%" align="center">66.690000</td>
+<td width="12%" align="center">67.850000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/06/19</td>
+<td width="12%" align="center" class="WeekDay">2016/06/20</td>
+<td width="12%" align="center" class="WeekDay">2016/06/21</td>
+<td width="12%" align="center" class="WeekDay">2016/06/22</td>
+<td width="12%" align="center" class="WeekDay">2016/06/23</td>
+<td width="12%" align="center" class="WeekDay">2016/06/24</td>
+<td width="12%" align="center" class="Sat">2016/06/25</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">69.520000</td>
+<td width="12%" align="center">69.100000</td>
+<td width="12%" align="center">68.850000</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">67.420000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/06/26</td>
+<td width="12%" align="center" class="WeekDay">2016/06/27</td>
+<td width="12%" align="center" class="WeekDay">2016/06/28</td>
+<td width="12%" align="center" class="WeekDay">2016/06/29</td>
+<td width="12%" align="center" class="WeekDay">2016/06/30</td>
+<td width="12%" align="center" class="WeekDay">2016/07/01</td>
+<td width="12%" align="center" class="Sat">2016/07/02</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">65.790000</td>
+<td width="12%" align="center">66.920000</td>
+<td width="12%" align="center">68.630000</td>
+<td width="12%" align="center">68.700000</td>
+<td width="12%" align="center">68.660000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/07/03</td>
+<td width="12%" align="center" class="WeekDay">2016/07/04</td>
+<td width="12%" align="center" class="WeekDay">2016/07/05</td>
+<td width="12%" align="center" class="WeekDay">2016/07/06</td>
+<td width="12%" align="center" class="WeekDay">2016/07/07</td>
+<td width="12%" align="center" class="WeekDay">2016/07/08</td>
+<td width="12%" align="center" class="Sat">2016/07/09</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">69.450000</td>
+<td width="12%" align="center">68.540000</td>
+<td width="12%" align="center">68.210000</td>
+<td width="12%" align="center">68.790000</td>
+<td width="12%" align="center">69.290000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/07/10</td>
+<td width="12%" align="center" class="WeekDay">2016/07/11</td>
+<td width="12%" align="center" class="WeekDay">2016/07/12</td>
+<td width="12%" align="center" class="WeekDay">2016/07/13</td>
+<td width="12%" align="center" class="WeekDay">2016/07/14</td>
+<td width="12%" align="center" class="WeekDay">2016/07/15</td>
+<td width="12%" align="center" class="Sat">2016/07/16</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">70.140000</td>
+<td width="12%" align="center">70.980000</td>
+<td width="12%" align="center">71.360000</td>
+<td width="12%" align="center">72.480000</td>
+<td width="12%" align="center">72.250000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/07/17</td>
+<td width="12%" align="center" class="WeekDay">2016/07/18</td>
+<td width="12%" align="center" class="WeekDay">2016/07/19</td>
+<td width="12%" align="center" class="WeekDay">2016/07/20</td>
+<td width="12%" align="center" class="WeekDay">2016/07/21</td>
+<td width="12%" align="center" class="WeekDay">2016/07/22</td>
+<td width="12%" align="center" class="Sat">2016/07/23</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">72.340000</td>
+<td width="12%" align="center">71.990000</td>
+<td width="12%" align="center">72.200000</td>
+<td width="12%" align="center">72.100000</td>
+<td width="12%" align="center">71.240000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/07/24</td>
+<td width="12%" align="center" class="WeekDay">2016/07/25</td>
+<td width="12%" align="center" class="WeekDay">2016/07/26</td>
+<td width="12%" align="center" class="WeekDay">2016/07/27</td>
+<td width="12%" align="center" class="WeekDay">2016/07/28</td>
+<td width="12%" align="center" class="WeekDay">2016/07/29</td>
+<td width="12%" align="center" class="Sat">2016/07/30</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">71.240000</td>
+<td width="12%" align="center">70.750000</td>
+<td width="12%" align="center">70.550000</td>
+<td width="12%" align="center">70.660000</td>
+<td width="12%" align="center">71.000000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/07/31</td>
+<td width="12%" align="center" class="WeekDay">2016/08/01</td>
+<td width="12%" align="center" class="WeekDay">2016/08/02</td>
+<td width="12%" align="center" class="WeekDay">2016/08/03</td>
+<td width="12%" align="center" class="WeekDay">2016/08/04</td>
+<td width="12%" align="center" class="WeekDay">2016/08/05</td>
+<td width="12%" align="center" class="Sat">2016/08/06</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">70.930000</td>
+<td width="12%" align="center">69.970000</td>
+<td width="12%" align="center">69.880000</td>
+<td width="12%" align="center">70.940000</td>
+<td width="12%" align="center">71.950000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/08/07</td>
+<td width="12%" align="center" class="WeekDay">2016/08/08</td>
+<td width="12%" align="center" class="WeekDay">2016/08/09</td>
+<td width="12%" align="center" class="WeekDay">2016/08/10</td>
+<td width="12%" align="center" class="WeekDay">2016/08/11</td>
+<td width="12%" align="center" class="WeekDay">2016/08/12</td>
+<td width="12%" align="center" class="Sat">2016/08/13</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">73.080000</td>
+<td width="12%" align="center">73.150000</td>
+<td width="12%" align="center">72.850000</td>
+<td width="12%" align="center">73.150000</td>
+<td width="12%" align="center">73.370000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/08/14</td>
+<td width="12%" align="center" class="WeekDay">2016/08/15</td>
+<td width="12%" align="center" class="WeekDay">2016/08/16</td>
+<td width="12%" align="center" class="WeekDay">2016/08/17</td>
+<td width="12%" align="center" class="WeekDay">2016/08/18</td>
+<td width="12%" align="center" class="WeekDay">2016/08/19</td>
+<td width="12%" align="center" class="Sat">2016/08/20</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">74.280000</td>
+<td width="12%" align="center">74.020000</td>
+<td width="12%" align="center">74.300000</td>
+<td width="12%" align="center">73.970000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/08/21</td>
+<td width="12%" align="center" class="WeekDay">2016/08/22</td>
+<td width="12%" align="center" class="WeekDay">2016/08/23</td>
+<td width="12%" align="center" class="WeekDay">2016/08/24</td>
+<td width="12%" align="center" class="WeekDay">2016/08/25</td>
+<td width="12%" align="center" class="WeekDay">2016/08/26</td>
+<td width="12%" align="center" class="Sat">2016/08/27</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">73.880000</td>
+<td width="12%" align="center">74.270000</td>
+<td width="12%" align="center">73.310000</td>
+<td width="12%" align="center">73.720000</td>
+<td width="12%" align="center">74.370000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/08/28</td>
+<td width="12%" align="center" class="WeekDay">2016/08/29</td>
+<td width="12%" align="center" class="WeekDay">2016/08/30</td>
+<td width="12%" align="center" class="WeekDay">2016/08/31</td>
+<td width="12%" align="center" class="WeekDay">2016/09/01</td>
+<td width="12%" align="center" class="WeekDay">2016/09/02</td>
+<td width="12%" align="center" class="Sat">2016/09/03</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">73.370000</td>
+<td width="12%" align="center">72.750000</td>
+<td width="12%" align="center">72.490000</td>
+<td width="12%" align="center">73.940000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/09/04</td>
+<td width="12%" align="center" class="WeekDay">2016/09/05</td>
+<td width="12%" align="center" class="WeekDay">2016/09/06</td>
+<td width="12%" align="center" class="WeekDay">2016/09/07</td>
+<td width="12%" align="center" class="WeekDay">2016/09/08</td>
+<td width="12%" align="center" class="WeekDay">2016/09/09</td>
+<td width="12%" align="center" class="Sat">2016/09/10</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">74.620000</td>
+<td width="12%" align="center">75.550000</td>
+<td width="12%" align="center">76.190000</td>
+<td width="12%" align="center">76.990000</td>
+<td width="12%" align="center">75.430000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/09/11</td>
+<td width="12%" align="center" class="WeekDay">2016/09/12</td>
+<td width="12%" align="center" class="WeekDay">2016/09/13</td>
+<td width="12%" align="center" class="WeekDay">2016/09/14</td>
+<td width="12%" align="center" class="WeekDay">2016/09/15</td>
+<td width="12%" align="center" class="WeekDay">2016/09/16</td>
+<td width="12%" align="center" class="Sat">2016/09/17</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">74.970000</td>
+<td width="12%" align="center">74.230000</td>
+<td width="12%" align="center">73.960000</td>
+<td width="12%" align="center">73.950000</td>
+<td width="12%" align="center">73.450000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/09/18</td>
+<td width="12%" align="center" class="WeekDay">2016/09/19</td>
+<td width="12%" align="center" class="WeekDay">2016/09/20</td>
+<td width="12%" align="center" class="WeekDay">2016/09/21</td>
+<td width="12%" align="center" class="WeekDay">2016/09/22</td>
+<td width="12%" align="center" class="WeekDay">2016/09/23</td>
+<td width="12%" align="center" class="Sat">2016/09/24</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">74.030000</td>
+<td width="12%" align="center">74.130000</td>
+<td width="12%" align="center">74.940000</td>
+<td width="12%" align="center">76.600000</td>
+<td width="12%" align="center">76.210000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/09/25</td>
+<td width="12%" align="center" class="WeekDay">2016/09/26</td>
+<td width="12%" align="center" class="WeekDay">2016/09/27</td>
+<td width="12%" align="center" class="WeekDay">2016/09/28</td>
+<td width="12%" align="center" class="WeekDay">2016/09/29</td>
+<td width="12%" align="center" class="WeekDay">2016/09/30</td>
+<td width="12%" align="center" class="Sat">2016/10/01</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">75.990000</td>
+<td width="12%" align="center">75.020000</td>
+<td width="12%" align="center">75.400000</td>
+<td width="12%" align="center">76.410000</td>
+<td width="12%" align="center">75.950000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/10/02</td>
+<td width="12%" align="center" class="WeekDay">2016/10/03</td>
+<td width="12%" align="center" class="WeekDay">2016/10/04</td>
+<td width="12%" align="center" class="WeekDay">2016/10/05</td>
+<td width="12%" align="center" class="WeekDay">2016/10/06</td>
+<td width="12%" align="center" class="WeekDay">2016/10/07</td>
+<td width="12%" align="center" class="Sat">2016/10/08</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">76.880000</td>
+<td width="12%" align="center">76.760000</td>
+<td width="12%" align="center">76.800000</td>
+<td width="12%" align="center">77.520000</td>
+<td width="12%" align="center">77.730000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/10/09</td>
+<td width="12%" align="center" class="WeekDay">2016/10/10</td>
+<td width="12%" align="center" class="WeekDay">2016/10/11</td>
+<td width="12%" align="center" class="WeekDay">2016/10/12</td>
+<td width="12%" align="center" class="WeekDay">2016/10/13</td>
+<td width="12%" align="center" class="WeekDay">2016/10/14</td>
+<td width="12%" align="center" class="Sat">2016/10/15</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">78.300000</td>
+<td width="12%" align="center">77.530000</td>
+<td width="12%" align="center">76.940000</td>
+<td width="12%" align="center">76.150000</td>
+<td width="12%" align="center">76.410000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/10/16</td>
+<td width="12%" align="center" class="WeekDay">2016/10/17</td>
+<td width="12%" align="center" class="WeekDay">2016/10/18</td>
+<td width="12%" align="center" class="WeekDay">2016/10/19</td>
+<td width="12%" align="center" class="WeekDay">2016/10/20</td>
+<td width="12%" align="center" class="WeekDay">2016/10/21</td>
+<td width="12%" align="center" class="Sat">2016/10/22</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">76.110000</td>
+<td width="12%" align="center">76.650000</td>
+<td width="12%" align="center">77.300000</td>
+<td width="12%" align="center">76.600000</td>
+<td width="12%" align="center">76.480000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/10/23</td>
+<td width="12%" align="center" class="WeekDay">2016/10/24</td>
+<td width="12%" align="center" class="WeekDay">2016/10/25</td>
+<td width="12%" align="center" class="WeekDay">2016/10/26</td>
+<td width="12%" align="center" class="WeekDay">2016/10/27</td>
+<td width="12%" align="center" class="WeekDay">2016/10/28</td>
+<td width="12%" align="center" class="Sat">2016/10/29</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">76.800000</td>
+<td width="12%" align="center">77.270000</td>
+<td width="12%" align="center">76.620000</td>
+<td width="12%" align="center">76.990000</td>
+<td width="12%" align="center">76.850000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/10/30</td>
+<td width="12%" align="center" class="WeekDay">2016/10/31</td>
+<td width="12%" align="center" class="WeekDay">2016/11/01</td>
+<td width="12%" align="center" class="WeekDay">2016/11/02</td>
+<td width="12%" align="center" class="WeekDay">2016/11/03</td>
+<td width="12%" align="center" class="WeekDay">2016/11/04</td>
+<td width="12%" align="center" class="Sat">2016/11/05</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">77.110000</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">75.510000</td>
+<td width="12%" align="center">75.270000</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/11/06</td>
+<td width="12%" align="center" class="WeekDay">2016/11/07</td>
+<td width="12%" align="center" class="WeekDay">2016/11/08</td>
+<td width="12%" align="center" class="WeekDay">2016/11/09</td>
+<td width="12%" align="center" class="WeekDay">2016/11/10</td>
+<td width="12%" align="center" class="WeekDay">2016/11/11</td>
+<td width="12%" align="center" class="Sat">2016/11/12</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">74.460000</td>
+<td width="12%" align="center">74.860000</td>
+<td width="12%" align="center">75.680000</td>
+<td width="12%" align="center">75.760000</td>
+<td width="12%" align="center">74.580000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/11/13</td>
+<td width="12%" align="center" class="WeekDay">2016/11/14</td>
+<td width="12%" align="center" class="WeekDay">2016/11/15</td>
+<td width="12%" align="center" class="WeekDay">2016/11/16</td>
+<td width="12%" align="center" class="WeekDay">2016/11/17</td>
+<td width="12%" align="center" class="WeekDay">2016/11/18</td>
+<td width="12%" align="center" class="Sat">2016/11/19</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">74.310000</td>
+<td width="12%" align="center">75.700000</td>
+<td width="12%" align="center">76.220000</td>
+<td width="12%" align="center">76.840000</td>
+<td width="12%" align="center">76.570000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/11/20</td>
+<td width="12%" align="center" class="WeekDay">2016/11/21</td>
+<td width="12%" align="center" class="WeekDay">2016/11/22</td>
+<td width="12%" align="center" class="WeekDay">2016/11/23</td>
+<td width="12%" align="center" class="WeekDay">2016/11/24</td>
+<td width="12%" align="center" class="WeekDay">2016/11/25</td>
+<td width="12%" align="center" class="Sat">2016/11/26</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">77.930000</td>
+<td width="12%" align="center">78.430000</td>
+<td width="12%" align="center">78.540000</td>
+<td width="12%" align="center">79.140000</td>
+<td width="12%" align="center">78.430000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/11/27</td>
+<td width="12%" align="center" class="WeekDay">2016/11/28</td>
+<td width="12%" align="center" class="WeekDay">2016/11/29</td>
+<td width="12%" align="center" class="WeekDay">2016/11/30</td>
+<td width="12%" align="center" class="WeekDay">2016/12/01</td>
+<td width="12%" align="center" class="WeekDay">2016/12/02</td>
+<td width="12%" align="center" class="Sat">2016/12/03</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">78.330000</td>
+<td width="12%" align="center">77.370000</td>
+<td width="12%" align="center">79.200000</td>
+<td width="12%" align="center">80.510000</td>
+<td width="12%" align="center">80.690000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/12/04</td>
+<td width="12%" align="center" class="WeekDay">2016/12/05</td>
+<td width="12%" align="center" class="WeekDay">2016/12/06</td>
+<td width="12%" align="center" class="WeekDay">2016/12/07</td>
+<td width="12%" align="center" class="WeekDay">2016/12/08</td>
+<td width="12%" align="center" class="WeekDay">2016/12/09</td>
+<td width="12%" align="center" class="Sat">2016/12/10</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">82.140000</td>
+<td width="12%" align="center">81.960000</td>
+<td width="12%" align="center">82.450000</td>
+<td width="12%" align="center">84.430000</td>
+<td width="12%" align="center">84.700000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/12/11</td>
+<td width="12%" align="center" class="WeekDay">2016/12/12</td>
+<td width="12%" align="center" class="WeekDay">2016/12/13</td>
+<td width="12%" align="center" class="WeekDay">2016/12/14</td>
+<td width="12%" align="center" class="WeekDay">2016/12/15</td>
+<td width="12%" align="center" class="WeekDay">2016/12/16</td>
+<td width="12%" align="center" class="Sat">2016/12/17</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">87.390000</td>
+<td width="12%" align="center">89.200000</td>
+<td width="12%" align="center">88.050000</td>
+<td width="12%" align="center">87.130000</td>
+<td width="12%" align="center">86.730000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/12/18</td>
+<td width="12%" align="center" class="WeekDay">2016/12/19</td>
+<td width="12%" align="center" class="WeekDay">2016/12/20</td>
+<td width="12%" align="center" class="WeekDay">2016/12/21</td>
+<td width="12%" align="center" class="WeekDay">2016/12/22</td>
+<td width="12%" align="center" class="WeekDay">2016/12/23</td>
+<td width="12%" align="center" class="Sat">2016/12/24</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">86.670000</td>
+<td width="12%" align="center">87.370000</td>
+<td width="12%" align="center">87.310000</td>
+<td width="12%" align="center">86.440000</td>
+<td width="12%" align="center">86.240000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR><table width="100%" border="1" cellpadding="1" cellspacing="1"><tr class="FieldTitlePrint"><td width="12%" align="center">日期</td>
+<td width="12%" align="center" class="Sun">2016/12/25</td>
+<td width="12%" align="center" class="WeekDay">2016/12/26</td>
+<td width="12%" align="center" class="WeekDay">2016/12/27</td>
+<td width="12%" align="center" class="WeekDay">2016/12/28</td>
+<td width="12%" align="center" class="WeekDay">2016/12/29</td>
+<td width="12%" align="center" class="WeekDay">2016/12/30</td>
+<td width="12%" align="center" class="Sat">2016/12/31</td>
+</tr>
+<tr class="FieldContentPrint"><td width="12%" align="center">淨值</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">--</td>
+<td width="12%" align="center">87.820000</td>
+<td width="12%" align="center">88.480000</td>
+<td width="12%" align="center">89.040000</td>
+<td width="12%" align="center">--</td>
+</tr>
+</table><BR>
+											
+											</td>
+										</tr>
+									</table>
+							
+							
+							<!-- Main Content -->		
+		            		</td>
+		            	</tr>	
+		            </table>
+				<!-- Page Content -->
+				</td>
+			</tr>
+			<tr>
+				<td align="center" valign="bottom">
+					
+<META http-equiv=Content-Type content="text/html; charset=BIG5">
+      <TABLE cellSpacing=0 cellPadding=5 width="95%" border=0>
+        <TR> 
+          <TD> <DIV align=center>
+          	<span class="copyright">本網站各項資料均由境外基金總代理輸入確認後，由本系統對外公佈<br>資料若有虛偽不實或錯誤，概由該公司負責<br>
+使用者可自行下載參考，惟於法令範圍內須合理使用，不得侵害他人權益。
+            <br>本網頁最佳瀏覽建議解析度1024 × 768<br>
+            </DIV></TD>
+        </TR>
+      </TABLE>
+				</td>
+			</tr>
+		</table>
+	</BODY>
+</HTML>
+
