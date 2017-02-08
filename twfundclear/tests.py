@@ -45,3 +45,8 @@ class FundNavTestCase(TestCase):
         self.assertTrue(fundnav.get_fundnav_json_path(self.fund_code,datetime.now().year), 
                         'The Fund NAV JSON file for this year Should exist.')
             
+    def test_load_from_json(self):
+        fund_code = 'LU0048573561'
+        fund_nav = fundnav.load_from_json(fund_code)
+        self.assertNotEqual(len(fund_nav), 0, 
+                        'The fund_nav json object should have multiple entry')
