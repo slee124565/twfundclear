@@ -155,13 +155,18 @@ LOGGING = {
         },
     },
     'root': {
-        'handlers': ['default'],
+        'handlers': ['console'],
         'level': 'DEBUG'
     },
     'loggers': {
         'twfundclear': {
             'handlers': ['console','default'],
             'level': 'DEBUG',
+            'propagate': False
+        },
+        'math_util': {
+            'handlers': ['console',],
+            'level': 'INFO',
             'propagate': False
         },
         'django.request': {
