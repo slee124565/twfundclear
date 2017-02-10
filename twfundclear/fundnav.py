@@ -3,7 +3,7 @@ import requests
 
 from lxml.html import document_fromstring
 
-from datetime import date
+from datetime import date, datetime
 import logging
 import json
 import codecs
@@ -112,22 +112,35 @@ def load_from_html(fund_code,year):
     return (fund_title,fund_nav)
 
 def load_from_json(fund_code,year_count=6):
+    '''load Fund NAV from JSON file and parse the date string attribute into datetime.date'''
     t_year = date.today().year
     count = 0
-    fund_nav = {}
+    fund_nav = []
     while count < year_count:
         json_file = get_fundnav_json_path(fund_code, t_year)
         logger.debug('load_from_json %s' % json_file)
         if os.path.exists(json_file):
             with open(json_file,'r') as fh:
-                fund_nav.update(json.loads(fh.read()))
-            logger.debug('load_from_json(%s, %s) with total %s' % (fund_code,t_year, len(fund_nav)))
+                year_nav = json.loads(fh.read())
+                logger.debug('load_from_json with year %s and items %s' % (t_year,len(year_nav)))
+                fund_nav += year_nav
             t_year -= 1
             count += 1
         else:
             logger.debug('no NAV JSON file for load_from_json(%s, %s)' % (fund_code,t_year))
             break
     
+    for n in range(len(fund_nav)):
+        date_str = fund_nav[n][0]
+        float_str = fund_nav[n][1]
+        fund_nav[n][0] = datetime.strptime(date_str,'%Y/%m/%d').date()
+        fund_nav[n][1] = float(float_str)
+        
+    fund_nav.sort(key=lambda x: x[0])
+    #fund_nav = fund_nav[::-1]
+        
+    logger.debug('load_from_json(fund_code=%s, year_count=%s) with total %s entry' % (fund_code,t_year, len(fund_nav)))
+    logger.debug('fund_nav digest: %s ... %s' % (str(fund_nav[:5]), str(fund_nav[-5:])))
     return fund_nav
     
 def file_storage_initialize(fund_code, max_year_count=5):
