@@ -81,6 +81,7 @@ def load_fundcode():
         t_fund_meta.pop('')
         t_fund_meta['code'] = t_fund_meta['code'].replace('=','').replace('"','')
         t_fund_meta['name_tw'] = codecs.decode(t_fund_meta['name_tw'],'big5' )
+        t_fund_meta['name_en'] = codecs.decode(t_fund_meta['name_en'],'big5' )
         t_fund_meta['distributor_name'] = codecs.decode(t_fund_meta['distributor_name'],'big5' )
         t_fund_meta['institution_name'] = codecs.decode(t_fund_meta['institution_name'],'big5' )
         t_fund_meta['institution_code'] = t_fund_meta['institution_code'].replace('=','').replace('"','')

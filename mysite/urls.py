@@ -20,7 +20,9 @@ from mysite import http_api
 
 urlpatterns = [
 #     url(r'^admin/', admin.site.urls),
-    url(r'^api/(?P<fund_code>\w+)', http_api.FundNavBollingerBand.as_view()),
+    url(r'^api/my_fund_list', http_api.MyFundListApi.as_view()),
+    url(r'^api/get_fund_bb_data/(?P<fund_code>\w+)', http_api.FundBBDataApi.as_view()),
+
     
     url(r'^tfc/', include('twfundclear.urls')),
 
